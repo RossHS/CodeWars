@@ -1,6 +1,8 @@
 package exercises.codewars.kyu8;
 
 /**
+ * Your task is to find the nearest square number, nearest_sq(n), of a positive integer n.
+ *
  * @author Ross Khapilov
  * @version 1.0 created on 09.05.2018
  */
