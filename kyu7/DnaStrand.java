@@ -21,17 +21,24 @@ package exercises.codewars.kyu7;
  */
 public class DnaStrand {
     public static String makeComplement(String dna) {
-        String res = "";
-        for (int i = 0; i < dna.length(); i++) {
-            if(dna.charAt(i)=='A') res+="T";
-           else if(dna.charAt(i)=='T') res+="A";
-           else if(dna.charAt(i)=='G') res+="C";
-           else if(dna.charAt(i)=='C') res+="G";
+        char[] chars = dna.toCharArray();
+        for (int i = 0; i < chars.length; i++) {
+            chars[i] = getComplement(chars[i]);
         }
-        return res;
+        return new String(chars);
     }
 
-    public static void main(String[] args) {
-        System.out.println(makeComplement("ATTGC"));
+    private static char getComplement(char c) {
+        switch (c) {
+            case 'A':
+                return 'T';
+            case 'T':
+                return 'A';
+            case 'C':
+                return 'G';
+            case 'G':
+                return 'C';
+        }
+        return c;
     }
 }
